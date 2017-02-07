@@ -2,6 +2,7 @@ html, body {
   margin: 0;
   padding: 0;
   background: #FAFAFA;
+  font-family: Arial, sans-serif;
 }
 
 .header {
@@ -61,6 +62,15 @@ html, body {
   background: #fff;
   height: 100%;
   transform: translateX(-102%);
+  display: flex;
+  flex-direction: column;
+}
+
+.side-nav--animatable .side-nav__container {
+ transition: transform 0.10s cubic-bezier(0,0,0.3,1);
+}
+
+.side-nav--visible .side-nav--animatable .side-nav__container {
   transition: transform 0.3s cubic-bezier(0,0,0.3,1);
 }
 
@@ -70,4 +80,42 @@ html, body {
 
 .side-nav--visible .side-nav__container {
   transform: none;
+}
+
+.side-nav__hide {
+   position: absolute;
+   left: 10px;
+   background: none;
+   border: none;
+   color: white;
+}
+
+.side-nav__header {
+  height: 200px;
+  background: #330099;
+  color: #FFF;
+  display: flex;
+  font-size: 16px;
+  padding: 16px;
+  align-items: flex-end;
+}
+
+.side-nav__content {
+  flex: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.side-nav__content li {
+  height: 32px;
+  line-height: 32px;
+  padding: 0 16px;
+}
+
+.side-nav__content li:hover {
+  background: #ccc;
 }
